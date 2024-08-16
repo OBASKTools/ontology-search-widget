@@ -1,9 +1,13 @@
 $.widget("sanger.ontology_search", {
     // default options
     options: {
-        endpoint: "https://cellular-semantics.sanger.ac.uk/ontology"
+        endpoint: "https://cellular-semantics.sanger.ac.uk/ontology",
+        filter: [],
+        boost: [],
     },
     _create: function () {
+        // destroy existing typeahead configuration
+        $(this.element).typeahead('destroy');
         $(this.element).addClass("typeahead");
         $(this.element).addClass("search-box");
         endpoint = this.options.endpoint;
@@ -11,18 +15,23 @@ $.widget("sanger.ontology_search", {
         if (endpoint.slice(-1) !== "/") {
             endpoint = endpoint + "/";
         } 
-
-        my_obj_tokenizer = this._getObjTokenizer();
+        filter_qparam="";
+        if (this.options.filter.length > 0) {
+            filter_qparam = "&filter=" + this.options.filter.join(",");
+        }
+        boost_qparam="";
+        if (this.options.boost.length > 0) {
+            boost_qparam = "&boost=" + this.options.boost.join(",");
+        }
         self = this;
         var typeaheadBH = new Bloodhound({
-        // datumTokenizer: my_obj_tokenizer(['cell_label', 'cell_set_accession']),
         datumTokenizer: datum => Bloodhound.tokenizers.whitespace(datum.value),
         queryTokenizer: Bloodhound.tokenizers.nonword,
         identify: function(t) {
             return t.id
         },
         remote: {
-            url: endpoint + "api/suggest?query=%QUERY",
+            url: endpoint + "api/suggest?query=%QUERY"+filter_qparam+boost_qparam,
             wildcard: "%QUERY",
             transform: function(t) {
                 return self._transformResults(t);
@@ -41,34 +50,28 @@ $.widget("sanger.ontology_search", {
             display: 'value',
             templates: {
                 suggestion: function(t) {
-                    toRender = self._renderResult(t);
-                    console.log(toRender);
-                    return toRender;
+                    return self._renderResult(t);
                 }
             }
-            // templates: function(t) {
-            //     toRender = this._renderResult(t);
-            //     console.log(toRender);
-            //     return toRender;
-            // }
         });
     },
-    _getObjTokenizer: function () {
-        return function setKey(keys) {
-          keys = Array.isArray(keys) ? keys : [].slice.call(arguments, 0);
-    
-          return function tokenize(o) {
-            var tokens = [];
-            keys.forEach(function(k) {
-              tokens = tokens.concat(this._customNonwordTokenizer(String(o[k])));
-            });
-            return tokens;
-          };
-        };
-    },
-    _customNonwordTokenizer: function (str) {
-        str = String(str);
-        return str ? str.split(/[^a-zA-Z0-9]+/) : [];
+    updateOptions: function (options) {
+        if (!("endpoint" in options)) {
+            options.endpoint = this.options.endpoint;
+        }
+        if (!("filter" in options)) {
+            options.filter = [];
+        } else if (typeof options.filter === "string") {
+            options.filter = [options.filter];
+        }
+        if (!("boost" in options)) {
+            options.boost = [];
+        } else if (typeof options.boost === "string") {
+            options.boost = [options.boost];
+        }
+        this.options = options;
+        this._setOptions(options);
+        this._create();  // re-create the typeahead with new options
     },
     _transformResults: function (t) {
         console.log(t);

@@ -39,9 +39,9 @@
     <script>
 
         $(document).ready(function () {
-            $("#txtbox1").ontology_search({
-                myvalue: 0
-            });
+            $("#txtbox1").ontology_search({});
+
+            $("#txtbox1").ontology_search("updateOptions", {filter: ["Cell"]});
         });
 
     </script>

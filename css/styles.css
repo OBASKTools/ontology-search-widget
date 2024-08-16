@@ -44,16 +44,13 @@
 
 .term-source{
     background-color: #ffac1b;
-    padding:2px;
+    padding:4px;
     padding-right:4px;
     color: white;
     font-size: smaller;
-    border-radius: 3px;
+    border-radius: 8px;
     display: inline-block;
     margin-right: 4px;
     vertical-align: middle;
 }
 
-.ontology-suggest{
-    
-}
