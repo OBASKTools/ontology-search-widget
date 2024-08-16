@@ -37,10 +37,12 @@ Here is a simple example to get you started:
 <!-- Index.html -->
 <html>
 <head>
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Include dependencies -->
-    <script src="path/to/jquery.min.js"></script>
-    <script src="path/to/typeahead.bundle.js"></script>
-    <script src="path/to/ontology_search_widget.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="js/ontology_search.js"></script>
 </head>
 <body>
     <input id="txtbox1" type="text" placeholder="Search">
