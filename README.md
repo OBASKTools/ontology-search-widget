@@ -1,6 +1,6 @@
 # Ontology Search Widget
 
-The Ontology Search Widget provides an easy-to-integrate search interface for ontologies, compatible with the OBASK Ontology Search Endpoint. Utilizing HTML, CSS, jQuery, and typeahead.js, this widget offers a highly configurable and customizable experience for embedding ontology search functionalities into web applications.
+The Ontology Search Widget provides an easy-to-integrate search interface for ontologies, compatible with the OBASK [Ontology Search Endpoint](https://github.com/OBASKTools/ontology-search). Utilizing HTML, CSS, jQuery, and typeahead.js, this widget offers a highly configurable and customizable experience for embedding ontology search functionalities into web applications.
 
 <p align="center">
     <img src="img/screenshot.png" alt="Ontology Search Widget" width="500"/>
