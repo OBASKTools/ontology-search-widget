@@ -62,7 +62,7 @@ By default, the widget uses the following configuration:
 
 ```javascript
 options: {
-    endpoint: "https://cellular-semantics.sanger.ac.uk/ontology",
+    endpoint: "https://cellular-semantics.sanger.ac.uk/demo",
     filter: [],
     boost: [],
 }
