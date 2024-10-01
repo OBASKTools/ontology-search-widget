@@ -13,7 +13,19 @@
 <body>
     <div class="container">
         <div class="row">
-            <input id='txtbox1' type='text' placeholder="Search">
+            <input id='Disease' type='Disease' placeholder="Disease">
+            <br>
+            <br>
+            <input id='Stage' type='Stage' placeholder="Stage">
+            <br>
+            <br>
+            <input id='Tissue' type='Tissue' placeholder="Tissue">
+            <br>
+            <br>
+            <input id='Ethnicity' type='Self declared Ethnicity' placeholder="Race">
+            <br>
+            <br>
+            <input id='Cell_type' type='Cell type' placeholder="Cell_type">
         </div>
     </div>
 
@@ -27,9 +39,16 @@
     <script>
 
         $(document).ready(function () {
-            $("#txtbox1").ontology_search({});
-
-            $("#txtbox1").ontology_search("updateOptions", {filter: ["Cell"]});
+            $("#Stage").ontology_search({});
+            $("#Stage").ontology_search("updateOptions", {filter: ["Developmental_stage%20AND%20Homo_sapiens"]});
+            $("#Tissue").ontology_search({});
+            $("#Tissue").ontology_search("updateOptions", {filter: ["Multicellular_anatomical_structure"]});
+            $("#Disease").ontology_search({});
+            $("#Disease").ontology_search("updateOptions", {filter: ["Disease"]});
+            $("#Ethnicity").ontology_search({});
+            $("#Ethnicity").ontology_search("updateOptions", {filter: ["Race"]});           
+            $("#Cell_type").ontology_search({});
+            $("#Cell_type").ontology_search("updateOptions", {filter: ["Cell"], boost: ["Kidney"]});  
         });
 
     </script>
