@@ -39,16 +39,19 @@
     <script>
 
         $(document).ready(function () {
-            $("#Stage").ontology_search({});
-            $("#Stage").ontology_search("updateOptions", {filter: ["Developmental_stage%20AND%20Homo_sapiens"]});
-            $("#Tissue").ontology_search({});
-            $("#Tissue").ontology_search("updateOptions", {filter: ["Multicellular_anatomical_structure"]});
-            $("#Disease").ontology_search({});
-            $("#Disease").ontology_search("updateOptions", {filter: ["Disease"]});
-            $("#Ethnicity").ontology_search({});
-            $("#Ethnicity").ontology_search("updateOptions", {filter: ["Race"]});           
-            $("#Cell_type").ontology_search({});
-            $("#Cell_type").ontology_search("updateOptions", {filter: ["Cell"], boost: ["Kidney"]});  
+
+        $("#Stage").ontology_search({});
+        $("#Stage").ontology_search("updateOptions", {filter: ["Developmental_stage", "Homo_sapiens"]});
+        $("#Tissue").ontology_search({});
+        $("#Tissue").ontology_search("updateOptions", {filter: ["Multicellular_anatomical_structure"]});
+        $("#Disease").ontology_search({});
+        $("#Disease").ontology_search("updateOptions", {filter: ["Disease"]});
+        $("#Ethnicity").ontology_search({});
+        $("#Ethnicity").ontology_search("updateOptions", {filter: ["Race"]});           
+        $("#Cell_type").ontology_search({});
+        $("#Cell_type").ontology_search("updateOptions", {filter: ["Cell"], boost: ["Kidney"]});  
+        $("#txtbox1").ontology_search({});
+
         });
 
     </script>

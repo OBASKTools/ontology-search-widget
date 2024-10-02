@@ -17,11 +17,11 @@ $.widget("sanger.ontology_search", {
         } 
         filter_qparam="";
         if (this.options.filter.length > 0) {
-            filter_qparam = "&filter=" + this.options.filter.join(",");
+            filter_qparam = this.options.filter.map(item => `&filter=${item}`).join("")
         }
         boost_qparam="";
         if (this.options.boost.length > 0) {
-            boost_qparam = "&boost=" + this.options.boost.join(",");
+            boost_qparam = this.options.boost.map(item => `&boost=${item}`).join("")
         }
         self = this;
         var typeaheadBH = new Bloodhound({
