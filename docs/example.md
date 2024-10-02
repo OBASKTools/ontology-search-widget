@@ -1,7 +1,7 @@
 ```
       $(document).ready(function () {
             $("#Stage").ontology_search({});
-            $("#Stage").ontology_search("updateOptions", {filter: ["Developmental_stage%20AND%20Homo_sapiens"]});
+            $("#Stage").ontology_search("updateOptions", {filter: ["Developmental_stage", "Homo_sapiens"]});
             $("#Tissue").ontology_search({});
             $("#Tissue").ontology_search("updateOptions", {filter: ["Multicellular_anatomical_structure"]});
             $("#Disease").ontology_search({});
