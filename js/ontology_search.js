@@ -1,7 +1,7 @@
 $.widget("sanger.ontology_search", {
     // default options
     options: {
-        endpoint: "https://cellular-semantics.sanger.ac.uk/demo",
+        endpoint: "https://rc1.celltype.info/ontology/",
         filter: [],
         boost: [],
     },
