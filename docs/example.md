@@ -1,3 +1,5 @@
+### Configuration
+
 ```
       $(document).ready(function () {
             $("#Stage").ontology_search({});
@@ -13,9 +15,15 @@
         });
 ```
 
+For full details see [index.html](https://github.com/OBASKTools/ontology-search-widget/blob/main/index.html)
+
+
 ### Developmental stage restricted to Homo sapiens 
+
 (Stage series for other species are available (e.g. mouse)
+
 <img width="767" alt="image" src="https://github.com/user-attachments/assets/093573c5-9ec7-40e4-a729-eeb240d7f24e">
+
 <img width="751" alt="image" src="https://github.com/user-attachments/assets/8064460c-f08b-46f5-9f1c-683f87998ee8">
 
 ### Boost on kidney nudges boost kidney cells to the top
