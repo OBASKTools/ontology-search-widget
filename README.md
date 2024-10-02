@@ -54,7 +54,7 @@ Here is a simple example to get you started:
 </html>
 ```
 
-Check [index.html](index.html) for a a more extensive example, built around support for the ontology fields in the [CellXGene metadata schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/5.1.0/schema.md#obs-cell-metadata).  For e
+Check [index.html](index.html) for a a more extensive example, built around support for the ontology fields in the [CellXGene metadata schema](https://github.com/chanzuckerberg/single-cell-curation/blob/main/schema/5.1.0/schema.md#obs-cell-metadata). For more details and examples see [example.md](https://github.com/OBASKTools/ontology-search-widget/blob/main/docs/example.md)
 
 ### Configuration
 
